@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a62f69 0%,#f0e6eb  100%);
+    margin: 0;
+    padding: 20px;
+   
+}
+
+
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.1);
+}
+
+h1 {
+    color: #be185d;
+    font-size: 36px;
+}
+
+p {
+    color: #9d174d;
+    font-size: 18px;
+}
+
+#createListButton {
+    background-color: #ec4899;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transform:scale(1.1);
+    box-shadow: 0 6px 12px rgba(180, 130, 150, 0.3);
+}
+
+#createListButton:hover {
+    background-color: #be185d;
+    transform:scale(1.1);
+}
+
+#createListButton:active {
+    transform:scale(1.2);
+    background-color:#ec4899;
+}
+
