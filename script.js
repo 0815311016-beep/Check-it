@@ -1,8 +1,5 @@
-function loadChecklistPage() {
-    // Navigate to the checklist page
-    window.location.href = "checklist.html";
-}
-
-// Add event listener to the button
 let createButton = document.getElementById("createListButton");
-createButton.addEventListener("click", loadChecklistPage);
+createButton.addEventListener("click", function() {
+    alert("Button clicked!"); // This should show if the button works
+    window.location.href = "checklist.html";
+});
