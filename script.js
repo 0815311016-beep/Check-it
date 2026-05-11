@@ -1,4 +1,20 @@
 
+function setupButton() {
+    let createButton = document.getElementById("createListButton");
+    
+    if (createButton === null) {
+        alert("Button not found!");
+        return;
+    }
+    
+    createButton.addEventListener("click", function() {
+        window.location.href = "checklist.html";
+    });
+}
+
+// Run the function when page loads
+setupButton();
+
 // Function to add item when button is clicked
 function addItemToList() {
     let inputBox = document.getElementById("newItemInput");
@@ -74,3 +90,6 @@ createButton.addEventListener("click", function() {
     alert("Button clicked!"); // This should show if the button works
     window.location.href = "checklist.html";
 });
+
+
+
