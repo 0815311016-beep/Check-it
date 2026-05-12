@@ -2,12 +2,9 @@
 function setupButton() {
     let createButton = document.getElementById("createListButton");
     
-    if (createButton === null) {
-        alert("Button not found!");
-        return;
-    }
     
     createButton.addEventListener("click", function() {
+        alert("Button clicked!");
         window.location.href = "checklist.html";
     });
 }
@@ -74,22 +71,4 @@ function makeChecklistItem(itemText) {
     // Add item box to the container
     container.appendChild(itemBox);
 }
-
-// Connect the Add button
-let addButton = document.getElementById("addItemButton");
-addButton.addEventListener("click", addItemToList);
-
-// Connect the Back button
-let backButton = document.getElementById("backButton");
-backButton.addEventListener("click", function() {
-    window.location.href = "index.html";
-});
-
-let createButton = document.getElementById("createListButton");
-createButton.addEventListener("click", function() {
-    alert("Button clicked!"); // This should show if the button works
-    window.location.href = "checklist.html";
-});
-
-
 
