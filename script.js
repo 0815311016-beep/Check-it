@@ -1,40 +1,43 @@
+// HOME PAGE BUTTON
+let createButton = document.getElementById("createListButton");
 
-function setupButton() {
-    let createButton = document.getElementById("createListButton");
-    
-    
+if (createButton) {
     createButton.addEventListener("click", function() {
-        alert("Button clicked!");
         window.location.href = "checklist.html";
     });
 }
 
-// Run the function when page loads
-setupButton();
+// CHECKLIST PAGE - BACK BUTTON
+let backButton = document.getElementById("backButton");
 
-// Function to add item when button is clicked
-function addItemToList() {
-    let inputBox = document.getElementById("newItemInput");
-    let userText = inputBox.value;
-    
-    // Check if user typed something
-    if (userText === "") {
-        alert("Please type something first!");
-        return;
-    }
-    
-    // Create the checklist item
-    makeChecklistItem(userText);
-    
-    // Clear the input box for next item
-    inputBox.value = "";
+if (backButton) {
+    backButton.addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
 }
 
-// Function to create a checklist item element
-function makeChecklistItem(itemText) {
+// CHECKLIST PAGE - ADD ITEM BUTTON
+let addButton = document.getElementById("addItemButton");
+
+if (addButton) {
+    addButton.addEventListener("click", function() {
+        let inputBox = document.getElementById("newItemInput");
+        let userText = inputBox.value;
+        
+        if (userText === "") {
+            alert("Please type something first!");
+            return;
+        }
+        
+        createItem(userText);
+        inputBox.value = "";
+    });
+}
+
+// FUNCTION to create checklist items
+function createItem(text) {
     let container = document.getElementById("checklistContainer");
     
-    // Create item container
     let itemBox = document.createElement("div");
     itemBox.style.padding = "12px";
     itemBox.style.margin = "10px 0";
@@ -42,33 +45,27 @@ function makeChecklistItem(itemText) {
     itemBox.style.borderRadius = "5px";
     itemBox.style.border = "1px solid #ff69b4";
     
-    // Create checkbox
-    let checkBox = document.createElement("input");
-    checkBox.type = "checkbox";
-    checkBox.style.marginRight = "10px";
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.style.marginRight = "10px";
     
-    // Create text label
-    let itemLabel = document.createElement("span");
-    itemLabel.innerText = itemText;
-    itemLabel.style.color = "#ff69b4";
-    itemLabel.style.fontSize = "16px";
+    let label = document.createElement("span");
+    label.innerText = text;
+    label.style.color = "#ff69b4";
+    label.style.fontSize = "16px";
     
-    // When checkbox is clicked, cross out text
-    checkBox.addEventListener("click", function() {
-        if (checkBox.checked) {
-            itemLabel.style.textDecoration = "line-through";
-            itemLabel.style.color = "#888";
+    checkbox.addEventListener("click", function() {
+        if (checkbox.checked) {
+            label.style.textDecoration = "line-through";
+            label.style.color = "#888";
         } else {
-            itemLabel.style.textDecoration = "none";
-            itemLabel.style.color = "#ff69b4";
+            label.style.textDecoration = "none";
+            label.style.color = "#ff69b4";
         }
     });
     
-    // Put checkbox and text in the item box
-    itemBox.appendChild(checkBox);
-    itemBox.appendChild(itemLabel);
+    itemBox.appendChild(checkbox);
+    itemBox.appendChild(label);
     
-    // Add item box to the container
     container.appendChild(itemBox);
 }
-
